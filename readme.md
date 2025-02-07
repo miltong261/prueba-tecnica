@@ -18,6 +18,21 @@ Antes de comenzar, asegurarse de tener instalados los siguientes programas en el
 
 ---
 
+### 📝 Notas
+* Para generar un api key con fines de pruebas, realizar una petición GET http://127.0.0.1:8000/generar-api-key
+Respuesta
+```
+{
+    "success": true,
+    "message": "API key generada exitosamente",
+    "data": {
+        "key": "GZYc4RJn8iCfLMebHOdaJ5Mv4uXOe2E7"
+    }
+}
+```
+* Se adjunta collecciones de postman (api-key.postman_collection.json y estudiantes.postman_collection.json) con los endpoints y variables de entorno (prueba-tecnica.postman_environment.json) para realizar pruebas, se pueden encontrar en la raíz del proyecto prueba-tecnica, también se pueden ver desde [Postman](https://www.postman.com/miltongiron/workspace/prueba-tecnica-backend/request/10563632-2047036b-68c8-47fd-9a00-50331284eb98?action=share&creator=10563632&ctx=documentation&active-environment=10563632-b0e391f9-8d39-40f3-8cba-dd006ada0784)
+* Se adjuntan capturas de la aplicación en angular (carpeta capturas en la raíz del proyecto) corriendo con diferentes escenarios (creación de estudiante, actualización de estudiante, listado de estudiantes según filtro y mensaje de no autorizado)
+
 ## 📝 **Clonar el repositorio**
 Abir terminal ejecutar:  
 
@@ -28,6 +43,10 @@ git clone https://github.com/miltong261/prueba-tecnica.git
 Moverse al directorio del proyecto
 ```bash
 cd prueba-tecnica
+```
+
+```bash
+git checkout feature/MiltonGiron
 ```
 
 ## 🚀 Backend (Laravel)
@@ -48,6 +67,7 @@ composer install
 cp .env.example .env
 ```
 ```
+# DB_CONNECTION=sqlite
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306    
@@ -107,21 +127,6 @@ NG_APP_API_KEY=apikey
 ng serve --open
 ```
 📌 El frontend se ejecutará en: http://localhost:4200
-
-### 📝 Notas
-* Para generar un api key con fines de pruebas, realizar una petición GET http://127.0.0.1:8000/generar-api-key
-Respuesta
-```
-{
-    "success": true,
-    "message": "API key generada exitosamente",
-    "data": {
-        "key": "GZYc4RJn8iCfLMebHOdaJ5Mv4uXOe2E7"
-    }
-}
-```
-* Se adjunta collecciones de postman (api-key.postman_collection.json y estudiantes.postman_collection.json) con los endpoints y variables de entorno (prueba-tecnica.postman_environment.json) para realizar pruebas, se pueden encontrar en la raíz del proyecto prueba-tecnica, también se pueden ver desde [Postman](https://www.postman.com/miltongiron/workspace/prueba-tecnica-backend/request/10563632-2047036b-68c8-47fd-9a00-50331284eb98?action=share&creator=10563632&ctx=documentation&active-environment=10563632-b0e391f9-8d39-40f3-8cba-dd006ada0784)
-* Se adjuntan capturas de la aplicación en angular (carpeta capturas en la raíz del proyecto) corriendo con diferentes escenarios (creación de estudiante, actualización de estudiante, listado de estudiantes según filtro y mensaje de no autorizado)
 
 ### ❌ Posibles mensajes de error
 
