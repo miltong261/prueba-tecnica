@@ -1,0 +1,115 @@
+<!-- Modal -->
+<div *ngIf="isModalOpen" class="modal fade show" style="display: block;" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ student?.id ? 'Editar Estudiante' : 'Nuevo Estudiante' }}</h5>
+        <button type="button" class="btn-close" (click)="close()" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onSubmit()" #studentForm="ngForm">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="first_name" class="form-label">Nombre</label>
+              <input type="text" id="first_name" class="form-control" required [(ngModel)]="student.first_name" name="first_name">
+              <div *ngIf="formErrors.first_name" class="text-danger">
+                {{ formErrors.first_name }}
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="last_name" class="form-label">Apellido</label>
+              <input type="text" id="last_name" class="form-control" required [(ngModel)]="student.last_name" name="last_name">
+              <div *ngIf="formErrors.last_name" class="text-danger">
+                {{ formErrors.last_name }}
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="date_of_birth" class="form-label">Fecha de Nacimiento</label>
+              <input type="date" id="date_of_birth" class="form-control" required [(ngModel)]="student.date_of_birth" name="date_of_birth">
+              <div *ngIf="formErrors.date_of_birth" class="text-danger">
+                {{ formErrors.date_of_birth }}
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="father_name" class="form-label">Nombre del Padre</label>
+              <input type="text" id="father_name" class="form-control" [(ngModel)]="student.father_name" name="father_name">
+              <div *ngIf="formErrors.father_name" class="text-danger">
+                {{ formErrors.father_name }}
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="mother_name" class="form-label">Nombre de la Madre</label>
+              <input type="text" id="mother_name" class="form-control" [(ngModel)]="student.mother_name" name="mother_name">
+              <div *ngIf="formErrors.mother_name" class="text-danger">
+                {{ formErrors.mother_name }}
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="grade_id" class="form-label">Grado</label>
+              <select id="grade_id" class="form-control" required [(ngModel)]="student.grade_id" name="grade_id" (change)="onGradeChange()">
+                <option *ngFor="let grade of grades" [value]="grade.id">{{ grade.name }}</option>
+              </select>
+              <div *ngIf="formErrors.grade_id" class="text-danger">
+                {{ formErrors.grade_id }}
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="section_id" class="form-label">Sección</label>
+              <select id="section_id" class="form-control" required [(ngModel)]="student.section_id" name="section_id">
+                <option *ngFor="let section of sections" [value]="section.id">{{ section.name }}</option>
+              </select>
+              <div *ngIf="formErrors.section_id" class="text-danger">
+                {{ formErrors.section_id }}
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="enrollment_date" class="form-label">Fecha de Inscripción</label>
+              <input type="date" id="enrollment_date" class="form-control" required [(ngModel)]="student.enrollment_date" name="enrollment_date">
+              <div *ngIf="formErrors.enrollment_date" class="text-danger">
+                {{ formErrors.enrollment_date }}
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="status" class="form-label">Estado</label>
+              <select id="status" class="form-control" required [(ngModel)]="student.status" name="status">
+                <option value="activo">Activo</option>
+                <option value="inactivo">Inactivo</option>
+                <option value="suspendido">Suspendido</option>
+              </select>
+              <div *ngIf="formErrors.status" class="text-danger">
+                {{ formErrors.status }}
+              </div>
+            </div>
+          </div>
+
+          <button type="submit"
+            class="btn w-100"
+            [ngClass]="{'btn-warning': student?.id, 'btn-primary': !student?.id}"
+            [disabled]="loading"
+          >
+            {{ student?.id ? 'Actualizar' : 'Guardar' }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="isModalOpen" class="modal-backdrop fade show" (click)="close()"></div>
+

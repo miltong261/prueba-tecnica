@@ -2,6 +2,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/generar-api-key', [\App\Http\Controllers\ApiKeyController::class, 'generate']);

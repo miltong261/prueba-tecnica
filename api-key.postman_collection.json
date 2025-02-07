@@ -1,0 +1,28 @@
+{
+	"info": {
+		"_postman_id": "491c0dc6-f60d-42d3-91ce-cb14c97f0d9b",
+		"name": "api-key",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10563632",
+		"_collection_link": "https://www.postman.com/miltongiron/workspace/prueba-tecnica-backend/collection/10563632-491c0dc6-f60d-42d3-91ce-cb14c97f0d9b?action=share&source=collection_link&creator=10563632"
+	},
+	"item": [
+		{
+			"name": "Generar API KEY",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/generar-api-key",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"generar-api-key"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

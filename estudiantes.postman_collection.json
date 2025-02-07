@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "559945e7-d987-4ed9-932b-f9b063f9000a",
+		"name": "estudiantes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10563632",
+		"_collection_link": "https://www.postman.com/miltongiron/workspace/prueba-tecnica-backend/collection/10563632-559945e7-d987-4ed9-932b-f9b063f9000a?action=share&source=collection_link&creator=10563632"
+	},
+	"item": [
+		{
+			"name": "Crear alumno",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{apikey}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"date_of_birth\": \"2010-01-01\",\r\n    \"father_name\": \"John Doe Father\",\r\n    \"mother_name\": \"John Doe Mother\",\r\n    \"grade_id\": 8,\r\n    \"section_id\": 1,\r\n    \"enrollment_date\": \"2025-02-06\",\r\n    \"status\": \"activo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apiurl}}/crear-alumno",
+					"host": [
+						"{{apiurl}}"
+					],
+					"path": [
+						"crear-alumno"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar alumno",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{apikey}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"date_of_birth\": \"2010-01-01\",\r\n    \"father_name\": \"John Doe Father\",\r\n    \"mother_name\": \"John Doe Mother\",\r\n    \"grade_id\": 7,\r\n    \"section_id\": 1,\r\n    \"enrollment_date\": \"2025-02-06\",\r\n    \"status\": \"activo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apiurl}}/actualizar-alumno/1",
+					"host": [
+						"{{apiurl}}"
+					],
+					"path": [
+						"actualizar-alumno",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar alumnos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{apikey}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apiurl}}/consultar-alumnos",
+					"host": [
+						"{{apiurl}}"
+					],
+					"path": [
+						"consultar-alumnos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar grados y secciones",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "{{apikey}}",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "X-API-Key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{apiurl}}/grados-secciones",
+					"host": [
+						"{{apiurl}}"
+					],
+					"path": [
+						"grados-secciones"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
